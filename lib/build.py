@@ -97,9 +97,9 @@ def get_model(item: str, custom: bool = False):
 
 
 def run_build(args):
-    VERSION_STR = f"§9v{args.version}" if args.version else "§4§l§nDEV"
+    VERSION_STR = f"§9v{args.version}" if hasattr(args, 'version') else "§4§l§nDEV"
     
-    if args.export: 
+    if hasattr(args, 'export'): 
         global DIST
         DIST = Path(args.export)
 

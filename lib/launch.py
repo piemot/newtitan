@@ -14,7 +14,7 @@ def run_launch(args):
     with open("config.toml", "rb") as f:
         config = toml.parse(f.read())
 
-    x = schema.Schema({"minecraft_dir": str, str: object})
+    x = schema.Schema({"minecraft_dir": str, schema.Optional(str): object})
     x.validate(dict(config.unwrap()))
 
     run_build(object())
