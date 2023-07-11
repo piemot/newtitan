@@ -4,6 +4,7 @@ import argparse
 from lib.build import run_build
 from lib.clean import run_clean
 from lib.add import run_add
+from lib.cmd import run_cmd
 from lib.launch import run_launch
 
 parser = argparse.ArgumentParser()
@@ -21,6 +22,11 @@ add = subparsers.add_parser("add", help="Add entry to manifest")
 add.add_argument("item_name")
 add.add_argument("new_name")
 add.set_defaults(func=run_add)
+
+cmd = subparsers.add_parser("cmd", help="Generate /give command from item")
+cmd.add_argument("item_name")
+cmd.add_argument("-p", "--player", action="store_true")
+cmd.set_defaults(func=run_cmd)
 
 launch = subparsers.add_parser("launch", help="Build and export dist to minecraft dir")
 launch.add_argument("-p", "--prod", action="store_true")
