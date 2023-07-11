@@ -1,0 +1,44 @@
+name: Release
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'Version code'
+        default: '0.0.1'
+        required: true
+        type: string
+      prerelease:
+        description: 'Prerelease'
+        default: false
+        type: boolean
+
+jobs:
+  compile:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2.3.3
+      with:
+        fetch-depth: 0
+
+    - name: Install python deps
+      uses: py-actions/py-dependency-install@v4.0.0
+
+    - name: Build package
+      run: python x.py build --version=${{ inputs.version }} --export=Titan
+      
+    - name: Zip resources
+      run: zip --quiet --recurse-paths Titan Titan/**
+    
+    - name: Trigger release
+      uses: softprops/action-gh-release@v0.1.15
+      with:
+        files: |
+          Titan.zip
+          LICENSE
+        tag_name: ${{ inputs.version }}
+        prerelease: ${{ inputs.prerelease }}

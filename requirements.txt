@@ -1,0 +1,11 @@
+black==23.7.0
+click==8.1.4
+contextlib2==21.6.0
+mypy-extensions==1.0.0
+packaging==23.1
+pathspec==0.11.1
+platformdirs==3.8.1
+schema==0.7.5
+tomli==2.0.1
+tomlkit==0.11.8
+typing_extensions==4.7.1

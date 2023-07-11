@@ -1,0 +1,12 @@
+[[wooden_axe]]
+data = 1
+id = "leaf_axe"
+[[wooden_axe]]
+data = 2
+id = "birch_leaf_axe"
+[[wooden_sword]]
+data = 1
+id = "leaf_sword"
+[[wooden_sword]]
+data = 2
+id = "birch_leaf_sword"
