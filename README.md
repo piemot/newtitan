@@ -53,15 +53,16 @@ A map of items and Custom Model Data numbers can be found in the [manifest](./ma
 `data` is the value of `CustomModelData`, an NBT tag that must be applied to an item for it to have a custom texture.
 For instance, the item listing `"birch_leaf_axe"` is recorded as such:
 
-````toml
+```toml
 [[wooden_axe]]
 data = 2
-id = "birch_leaf_axe"```
+id = "birch_leaf_axe"
+```
+
 To get it, you need to get a `wooden_axe` with a `CustomModelData` of `2`. A command for this would be:
-````
 
+```
 /give @s minecraft:wooden_axe{CustomModelData:2}
-
 ```
 
 ## Local Development
@@ -91,4 +92,7 @@ Releases must be SemVer format compatible, but we do not strictly adhere to the 
 ## License
 
 This project is licensed under the GPLv3 License - see the [LICENSE file](./LICENSE) for details.
+
+```
+
 ```
