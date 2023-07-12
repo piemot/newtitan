@@ -20,7 +20,7 @@ def run_launch(args):
     run_build(object())
 
     targetdir = Path(
-        config["minecraft_dir"], "resourcepacks", get_pack_name(not args.prod)
+        config["minecraft_dir"], "resourcepacks", get_pack_name(hasattr(args, "prod") and not args.prod)
     )
 
     if os.path.exists(targetdir):

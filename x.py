@@ -6,6 +6,7 @@ from lib.clean import run_clean
 from lib.add import run_add
 from lib.cmd import run_cmd
 from lib.launch import run_launch
+from lib.watch import run_watch
 
 parser = argparse.ArgumentParser()
 subparsers = parser.add_subparsers()
@@ -31,6 +32,9 @@ cmd.set_defaults(func=run_cmd)
 launch = subparsers.add_parser("launch", help="Build and export dist to minecraft dir")
 launch.add_argument("-p", "--prod", action="store_true")
 launch.set_defaults(func=run_launch)
+
+watch = subparsers.add_parser("watch", help="Run `launch` whenever the assets directory changes")
+watch.set_defaults(func=run_watch)
 
 args = parser.parse_args()
 
