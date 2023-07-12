@@ -7,6 +7,9 @@ id = "birch_leaf_axe"
 [[wooden_axe]]
 data = 3
 id = "birch_axe"
+[[wooden_axe]]
+data = 4
+id = "hay_axe"
 [[wooden_sword]]
 data = 1
 id = "leaf_sword"
@@ -16,3 +19,6 @@ id = "birch_leaf_sword"
 [[wooden_sword]]
 data = 3
 id = "birch_sword"
+[[wooden_sword]]
+data = 4
+id = "hay_sword"
