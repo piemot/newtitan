@@ -45,6 +45,6 @@ jobs:
         files: |
           Titan.zip
           LICENSE
-        tag_name: "v${{ inputs.version }}: ${{ inputs.info }}"
+        tag_name: ${{ inputs.version }}
         prerelease: ${{ inputs.prerelease }}
         body: ${{ inputs.info }}
