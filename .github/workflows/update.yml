@@ -8,6 +8,11 @@ on:
         default: '0.0.1'
         required: true
         type: string
+      info:
+        description: 'Update information'
+        default: 'Update'
+        required: true
+        type: string
       prerelease:
         description: 'Prerelease'
         default: false
@@ -40,5 +45,6 @@ jobs:
         files: |
           Titan.zip
           LICENSE
-        tag_name: ${{ inputs.version }}
+        tag_name: "v${{ inputs.version }}: ${{ inputs.info }}"
         prerelease: ${{ inputs.prerelease }}
+        body: ${{ inputs.info }}
